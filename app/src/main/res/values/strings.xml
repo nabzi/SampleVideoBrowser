@@ -4,4 +4,5 @@
     <string name="likes">%s Likes</string>
     <string name="dislikes">%s Dislikes</string>
     <string name="please_turn_on_gps">Please turn on GPS</string>
+    <string name="enter_search_phrase">لطفا برای نمایش ویدیو عنوانی را جستجو کنید</string>
 </resources>

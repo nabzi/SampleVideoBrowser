@@ -40,13 +40,12 @@ class ContentRepositoryImpl(
             : StateFlow<Resource<List<Content>>?> {
         return object : RemoteResource<List<Content>>() {
             override suspend fun updateDB(result: List<Content>) {
-                if (page == 1)
-                    dbDataSource.clear()
+                dbDataSource.clear()
                 dbDataSource.update(result)
             }
 
             override fun getFromDB(): Flow<List<Content>> {
-                return dbDataSource.getContents()
+                return dbDataSource.getContents(search)
             }
 
             override suspend fun pullFromServer(): Resource<List<Content>> {
@@ -65,8 +64,8 @@ class ContentDBDataSource(private val ContentDao: ContentDao) {
         ContentDao.removeAll()
     }
 
-    fun getContents(): Flow<List<Content>> {
-        return ContentDao.getContentsFlow()
+    fun getContents(search: String): Flow<List<Content>> {
+        return ContentDao.getContentsFlow("$search%")
     }
 }
 

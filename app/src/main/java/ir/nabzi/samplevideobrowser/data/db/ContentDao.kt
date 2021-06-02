@@ -19,8 +19,8 @@ abstract class ContentDao {
     @Query("SELECT * FROM content " )
     abstract fun getContents(): List<Content>
 
-    @Query("SELECT * FROM content " )
-    abstract fun getContentsFlow(): Flow<List<Content>>
+    @Query("SELECT * FROM content WHERE title LIKE :search" )
+    abstract fun getContentsFlow(search : String): Flow<List<Content>>
 
     @Query("Delete From content" )
     abstract suspend fun removeAll()
