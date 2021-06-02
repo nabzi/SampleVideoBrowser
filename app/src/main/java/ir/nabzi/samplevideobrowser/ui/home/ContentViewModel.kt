@@ -16,7 +16,7 @@ class ContentViewModel(private val ContentRepository  : ContentRepository
                     .asLiveData()
     }
 
-    val Content = selectedContentId.map { _id ->
+    val selectedContent = selectedContentId.map { _id ->
         contentList?.value?.data?.firstOrNull { it.id == _id }
     }
 
