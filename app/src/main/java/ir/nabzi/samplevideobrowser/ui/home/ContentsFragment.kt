@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import ir.nabzi.samplevideobrowser.R
+import ir.nabzi.samplevideobrowser.databinding.FragmentContentDetailsBinding
+import ir.nabzi.samplevideobrowser.databinding.FragmentContentsBinding
 import ir.nabzi.samplevideobrowser.model.Content
 import ir.nabzi.samplevideobrowser.model.Status
 import ir.nabzi.samplevideobrowser.ui.home.adapter.ContentAdapter
@@ -25,7 +27,10 @@ class ContentsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_contents, container, false)
+        val binding = FragmentContentsBinding.inflate(inflater, container, false)
+        binding.vmodel = vmodel
+        binding.lifecycleOwner = this
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -10,13 +10,11 @@ class ContentViewModel(private val ContentRepository  : ContentRepository
                      ) : ViewModel(){
 
     val  selectedContentId = MutableLiveData<String>()
-    var contentList : LiveData<Resource<List<Content>>>? = null //= currentLocation.switchMap {
-//            page = 1
-//            ContentRepository.getContentsNearLocation(it.latitude, it.longitude, viewModelScope, 1 ,
-//                lastLocation.distanceTo(it) > MIN_LOCATION_CHANGE)
-//                    .asLiveData()
-//    }
-
+    val searchPhrase = MutableLiveData<String>("")
+    var contentList : LiveData<Resource<List<Content>>?> = searchPhrase.switchMap {
+            ContentRepository.getContents(it, viewModelScope, 1 , true)
+                    .asLiveData()
+    }
 
     val Content = selectedContentId.map { _id ->
         contentList?.value?.data?.firstOrNull { it.id == _id }

@@ -15,8 +15,8 @@ data class Content
         val title: String,
         val subTitle: String? = null,
         val imageUrl: String? = null,
-        val rating: Int? = null,
-        val location_lat: Double,
-        val location_lng: Double
-
-) : Parcelable
+        val videoUrl : String? = null,
+        val likes: Int? = null,
+        val timesPlayed: Int? = null,
+        val commentCount: Int? = null
+        ) : Parcelable
