@@ -16,6 +16,7 @@ data class Content
         val subTitle: String? = null,
         val imageUrl: String? = null,
         val videoUrl : String? = null,
+        val videoLengthSec : Int = 0,
         val likes: Int? = null,
         val timesPlayed: Int? = null,
         val commentCount: Int? = null
