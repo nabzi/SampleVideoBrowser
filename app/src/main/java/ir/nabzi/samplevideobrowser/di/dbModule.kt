@@ -9,7 +9,7 @@ import org.koin.dsl.module
 
 val dbModule = module {
     fun provideDatabase(application: Application): DB {
-        return Room.databaseBuilder(application, DB::class.java, "Content").build()
+        return Room.databaseBuilder(application, DB::class.java, "contents").build()
     }
 
     fun provideContentDao(database: DB): ContentDao {

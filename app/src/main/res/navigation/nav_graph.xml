@@ -3,20 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/placesFragment">
+    app:startDestination="@id/contentsFragment">
 
     <fragment
-        android:id="@+id/placesFragment"
-        android:name="ir.nabzi.samplevideobrowser.ui.home.ContentItemFragment"
-        android:label="fragment_places"
-        tools:layout="@layout/fragment_places" >
+        android:id="@+id/contentsFragment"
+        android:name="ir.nabzi.samplevideobrowser.ui.home.ContentsFragment"
+        android:label="fragment_contents"
+        tools:layout="@layout/fragment_contents" >
         <action
-            android:id="@+id/action_placesFragment_to_placeDetailsFragment"
-            app:destination="@id/placeDetailsFragment" />
+            android:id="@+id/action_contentsFragment_to_contentDetailsFragment"
+            app:destination="@id/contentDetailsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/placeDetailsFragment"
-        android:name="ir.nabzi.aroundme.ui.detail.PlaceDetailsFragment"
+        android:id="@+id/contentDetailsFragment"
+        android:name="ir.nabzi.samplevideobrowser.ui.detail.ContentDetailsFragment"
         android:label="fragment_place_details"
-        tools:layout="@layout/fragment_place_details" />
+        tools:layout="@layout/fragment_content_details" />
 </navigation>

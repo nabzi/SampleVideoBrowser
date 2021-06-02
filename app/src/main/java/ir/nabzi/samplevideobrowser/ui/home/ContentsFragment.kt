@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import ir.nabzi.samplevideobrowser.R
 import ir.nabzi.samplevideobrowser.model.Content
 import ir.nabzi.samplevideobrowser.model.Status
@@ -74,9 +75,9 @@ class ContentsFragment : Fragment() {
 
     fun goToContent(id: String) {
         vmodel.selectedContentId.postValue(id)
-//        this.findNavController().navigate(
-//            ContentsFragmentDirections.actionContentsFragmentToContentDetailsFragment()
-//        )
+        this.findNavController().navigate(
+            ContentsFragmentDirections.actionContentsFragmentToContentDetailsFragment()
+        )
     }
 
 }

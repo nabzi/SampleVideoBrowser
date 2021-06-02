@@ -14,7 +14,7 @@ import kotlinx.coroutines.flow.StateFlow
 import retrofit2.Response
 
 interface ContentRepository {
-    fun getContentsNearLocation(
+    fun getContents(
         search: String,
         coroutineScope: CoroutineScope,
         page: Int,
@@ -30,7 +30,7 @@ class ContentRepositoryImpl(
         val PAGE_SIZE = 20
     }
 
-    override fun getContentsNearLocation(
+    override fun getContents(
         search: String,
         coroutineScope: CoroutineScope,
         page: Int,
