@@ -1,4 +1,4 @@
-package ir.nabzi.aroundme.data.repository
+package ir.nabzi.samplevideobrowser.data.repository
 import ir.nabzi.samplevideobrowser.model.Resource
 import ir.nabzi.samplevideobrowser.model.Resource.Companion.error
 import ir.nabzi.samplevideobrowser.model.Status

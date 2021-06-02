@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">SampleVideoBrowser</string>
+    <string name="rating_desc">Rated %s out of 100 in many ratings</string>
+    <string name="likes">%s Likes</string>
+    <string name="dislikes">%s Dislikes</string>
+    <string name="please_turn_on_gps">Please turn on GPS</string>
 </resources>

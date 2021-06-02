@@ -1,4 +1,4 @@
-package ir.nabzi.aroundme.di
+package ir.nabzi.samplevideobrowser.di
 
 import com.google.gson.Gson
 import org.koin.android.viewmodel.dsl.viewModel

@@ -1,4 +1,4 @@
-package ir.nabzi.aroundme.model
+package ir.nabzi.samplevideobrowser.model
 
 data class NearbySearchResponse(
     val results         : List<SearchResponse>

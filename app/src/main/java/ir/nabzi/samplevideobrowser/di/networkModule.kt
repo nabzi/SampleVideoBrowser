@@ -1,4 +1,4 @@
-package ir.nabzi.aroundme.di
+package ir.nabzi.samplevideobrowser.di
 
 import ir.nabzi.samplevideobrowser.data.remote.BASE_URL
 import ir.nabzi.samplevideobrowser.data.remote.createHttpClient

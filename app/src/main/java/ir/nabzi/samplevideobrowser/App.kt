@@ -3,8 +3,8 @@ package ir.nabzi.samplevideobrowser
 import android.app.Application
 import com.vimeo.networking.Configuration
 import com.vimeo.networking.VimeoClient
-import ir.nabzi.aroundme.di.appModule
-import ir.nabzi.aroundme.di.networkModule
+import ir.nabzi.samplevideobrowser.di.appModule
+import ir.nabzi.samplevideobrowser.di.networkModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 

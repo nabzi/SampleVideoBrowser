@@ -1,6 +1,6 @@
 package ir.nabzi.samplevideobrowser.data.remote
 
-import ir.nabzi.aroundme.model.SearchResponse
+import ir.nabzi.samplevideobrowser.model.SearchResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

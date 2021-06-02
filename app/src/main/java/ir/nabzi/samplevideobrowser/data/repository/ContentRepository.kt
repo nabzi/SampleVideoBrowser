@@ -1,8 +1,8 @@
 package ir.nabzi.samplevideobrowser.data.repository
 
-import ir.nabzi.aroundme.data.repository.NetworkCall
-import ir.nabzi.aroundme.data.repository.RemoteResource
-import ir.nabzi.aroundme.model.SearchResponse
+import ir.nabzi.samplevideobrowser.data.repository.NetworkCall
+import ir.nabzi.samplevideobrowser.data.repository.RemoteResource
+import ir.nabzi.samplevideobrowser.model.SearchResponse
 import ir.nabzi.samplevideobrowser.data.db.ContentDao
 import ir.nabzi.samplevideobrowser.data.remote.ApiService
 import ir.nabzi.samplevideobrowser.data.repository.ContentRepositoryImpl.Companion.PAGE_SIZE
