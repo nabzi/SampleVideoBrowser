@@ -94,12 +94,12 @@ class ContentRemoteDataSource(val apiServices: ApiService) {
                 "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_5mb.mp4",
                         10 , 2,0
                         ),
-                Content("id2" , "avadeo 2" , "" ,
+                Content("id2" , "avadeo 2" , "Video 2 Video 1 Video 1 Video 1" ,
                         "https://cdn.britannica.com/s:690x388,c:crop/12/130512-004-AD0A7CA4/campus-Riverside-Ottawa-The-Hospital-Ont.jpg",
                         "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_5mb.mp4",
                         20 , 5,0
                 ),
-                Content("id3" , "bvideo 3" , "" ,
+                Content("id3" , "bvideo 3" , "Video3  Video 1 Video 1 Video 1" ,
                         "http://riyainfosystems.com/wp-content/uploads/2019/06/5b76b45cbb3a6.jpg",
                         "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_5mb.mp4",
                         21 , 5,1
