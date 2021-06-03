@@ -23,6 +23,10 @@ class ContentDetailsFragment : Fragment() {
     private val vmodel: ContentViewModel by sharedViewModel()
     var player: SimpleExoPlayer? = null
     lateinit var binding : FragmentContentDetailsBinding
+
+    val STATE_RESUME_POSITION = "resume_position"
+    val STATE_RESUME_WINDOW = "resume_window"
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,15 +39,12 @@ class ContentDetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        initView()
+        initView()
     }
 
     private fun initView() {
         videoPlayer.useController = false
-        //preparePlayerForContent()
         btnPlay.visibility = View.VISIBLE
-
-
         btnPlay.setOnClickListener {
             player?.run {
                 if (isPlaying)
@@ -78,11 +79,7 @@ class ContentDetailsFragment : Fragment() {
     }
     override fun onResume() {
         super.onResume()
-            initView()
         initializePlayer()
-        if (player?.playbackState != Player.STATE_READY)
-            preparePlayerForContent()
-
     }
 
     override fun onPause() {
@@ -103,6 +100,11 @@ class ContentDetailsFragment : Fragment() {
         }
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putInt(STATE_RESUME_WINDOW, currentWindow)
+        outState.putLong(STATE_RESUME_POSITION, playbackPosition)
+        super.onSaveInstanceState(outState)
+    }
     override fun onStop() {
         super.onStop()
         if (Util.SDK_INT >= 24) {
@@ -115,34 +117,16 @@ class ContentDetailsFragment : Fragment() {
             player = SimpleExoPlayer.Builder(requireContext()).build()
             videoPlayer.player = player
         }
+        if (player?.playbackState != Player.STATE_READY)
+            preparePlayerForContent()
         player?.seekTo(currentWindow, playbackPosition)
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
         binding.orientationLandscape =
-            getResources().getConfiguration().orientation === Configuration.ORIENTATION_LANDSCAPE
+            resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
         initializePlayer()
-        if (player?.playbackState != Player.STATE_READY)
-            preparePlayerForContent()
-
     }
-//
-//        // Checking the orientation of the screen
-//        if (newConfig.orientation === Configuration.ORIENTATION_LANDSCAPE) {
-////            val params = cvMedia.getLayoutParams() as ConstraintLayout.LayoutParams
-////            params.width = ViewGroup.LayoutParams.MATCH_PARENT
-////            params.height = ViewGroup.LayoutParams.MATCH_PARENT
-////
-////            cvMedia.setLayoutParams(params)
-//
-//        } else if (newConfig.orientation === Configuration.ORIENTATION_PORTRAIT) {
-//            val params = cvMedia.getLayoutParams() as ConstraintLayout.LayoutParams
-//            params.width = ViewGroup.LayoutParams.MATCH_PARENT
-//            params.height = 300
-//            cvMedia.setLayoutParams(params)
-//
-//        }
-//    }
 
 }
