@@ -41,7 +41,7 @@ class ContentsFragment : Fragment() {
     private fun subscribeUi() {
         vmodel.contentList?.observe(viewLifecycleOwner, Observer { resource ->
             resource?.data?.let {
-                if (it.isNotEmpty())
+
                     showContents(it)
             }
             when (resource?.status) {
@@ -62,8 +62,6 @@ class ContentsFragment : Fragment() {
 
 
     private fun showContents(Contents: List<Content>) {
-        if(Contents.isEmpty())
-            return
         adapter.apply {
             list = Contents
             isMoreDataAvailable = true
